@@ -1,0 +1,26 @@
+<div class="page-wrapper">
+  <main class="card  ">
+    <section class=" img-section">
+      <section class="img-section-center">
+        <img class="container-img" src="../assets/illustration-woman-online-desktop.svg" alt="">
+      </section>
+      <img class="container-img-2" src="../assets/illustration-box-desktop.svg" alt="">
+    </section>
+
+    <img src="../assets/illustration-woman-online-mobile.svg" class="hero-img-mobile"
+      alt="Illustration of a woman at a desktop computer">
+
+    <section class="lg:w-[450px] mt-16 mx-10 sm:w-[250px]">
+      <h1 class="accordion-title">FAQ</h1>
+      <ng-container *ngFor="let accordion of accordions; let i = index">
+        <div class="accordion" (click)="toggleAccordian(i)">
+          <p class="question">{{ accordion.question }}</p>
+          <img src="../assets/icon-arrow-down.svg" [ngClass]="{'rotate': accordion.active}" alt="">
+        </div>
+        <div class="bg-white overflow-hidden w-full" *ngIf="accordion.active">
+          <p class="font-thin text-xs">{{ accordion.answer }}</p>
+        </div>
+      </ng-container>
+    </section>
+  </main>
+</div>
